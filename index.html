@@ -102,6 +102,71 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns.forEach((button) => {
+      let id = button.innerHTML;
+      button.addEventListener('click', e => {
+        if(id == "Console Log"){
+            console.log("Beans");
+        }
+        if(id == "Console Error"){
+          console.error("err");
+        }
+        if(id == "Console Count"){
+          for(var i = 1; i < 5; i++)
+            console.log("Count Button: "+i);
+        }
+        if(id == "Console Warn"){
+          console.warn("warning")
+        }
+        if(id == "Console Assert"){
+          const x = 5;
+          const y = 3;
+          const reason = 'x is expected to be less than y';
+          console.assert(x < y, {x, y, reason});
+        }
+        if(id == "Console Clear"){
+          console.clear();
+        }
+        if(id == "Console Dir"){
+          console.dir(document.head);
+        }
+        if(id == "Console dirxml"){
+          console.dirxml(document);
+        }
+        if(id == "Console Group Start"){
+          const label = 'Console Group';
+          console.group(label);
+          //console.info("info");
+          //console.info("info2");
+        }
+        if(id == "Console Group End"){
+          console.groupEnd();
+        }
+        if(id == "Console Table"){
+          var jsonObj = [
+            {title: 'Pirate', name: 'Greenstache', income: '100k Dubloons' ,},
+            {title: 'Senator', name: 'wwwwww', income: 'bribess' ,},
+            {title: 'Teacher', name: 'Mr. Sir', income: '1' ,}
+          ]
+          console.table(jsonObj);
+        }
+        if(id == "Start Timer"){
+          console.time();
+        }
+        if(id == "End Timer"){
+          console.timeEnd();
+        }
+        if(id == "Console Trace"){
+          console.trace();
+        }
+        if(id == "Trigger a Global Error"){
+          throw new Error("Oh no!");
+        }
+      });
+    });
+
+    
+
   </script>
 </body>
 
